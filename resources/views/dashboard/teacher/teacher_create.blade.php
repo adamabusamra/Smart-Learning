@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Admin | Create Admins
+Teacher | Create Teachers
 @endsection
 
 @section("sub_header")
@@ -11,14 +11,14 @@ Admin | Create Admins
     <!--begin::Details-->
     <div class="d-flex align-items-center flex-wrap mr-2">
       <!--begin::Title-->
-      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">New Admin</h5>
+      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">New Teacher</h5>
       <!--end::Title-->
       <!--begin::Separator-->
       <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
       <!--end::Separator-->
       <!--begin::Search Form-->
       <div class="d-flex align-items-center" id="kt_subheader_search">
-        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">Enter admin details and submit</span>
+        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">Enter Teacher details and submit</span>
       </div>
       <!--end::Search Form-->
     </div>
@@ -45,12 +45,12 @@ Admin | Create Admins
         <div class="col-xl-12 col-xxl-7">
           <!--begin::Form-->
 
-          <form action="{{ route('admins.store') }}" method="POST" class="form" id="kt_form"
+          <form action="{{ route('teachers.store') }}" method="POST" class="form" id="kt_form"
             enctype="multipart/form-data">
             @csrf
-            <!--begin::Create Admin Form-->
+            <!--begin::Create Teacher Form-->
             <div data-wizard-type="step-content" data-wizard-state="current">
-              <h3 class="mb-10 font-weight-bold text-dark">Create Admin:</h3>
+              <h3 class="mb-10 font-weight-bold text-dark">Create Teacher:</h3>
               <div class="row">
                 <div class="col-xl-12">
                   <div class="form-group row">
@@ -125,23 +125,23 @@ Admin | Create Admins
               </div>
 
               <div class="form-group row">
-                <label class="col-xl-3 col-lg-3 col-form-label">Admin Role</label>
+                <label class="col-xl-3 col-lg-3 col-form-label">Teacher Role</label>
                 <div class="col-xl-9 col-lg-9 col-form-label">
                   <div class="checkbox-inline">
                     <label class="checkbox">
-                      <input name="isSuperAdmin" type="checkbox" {{ old('isSuperAdmin') == 'on' ? 'checked':'' }}>
-                      <span></span>Super Admin</label>
+                      <input name="isSuperTeacher" type="checkbox" {{ old('isSuperTeacher') == 'on' ? 'checked':'' }}>
+                      <span></span>Super Teacher</label>
                   </div>
                 </div>
               </div>
             </div>
-            <!--end::Create Admin Form-->
+            <!--end::Create Teacher Form-->
 
             <!--begin::Actions-->
             <div class="d-flex justify-content-end border-top pt-10">
               <div>
                 <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">Create
-                  Admin</button>
+                  Teacher</button>
               </div>
             </div>
             <!--end::Actions-->
