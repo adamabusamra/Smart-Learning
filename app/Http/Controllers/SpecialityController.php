@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Field;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class SpecialityController extends Controller
      */
     public function index()
     {
-        //
+        $specialities = Speciality::all();
+        return view('dashboard.admin.speciality_index', compact('specialities'));
     }
 
     /**
@@ -24,7 +26,8 @@ class SpecialityController extends Controller
      */
     public function create()
     {
-        //
+        $fields = Field::all();
+        return view('dashboard.admin.speciality_create', compact('fields'));
     }
 
     /**
@@ -35,7 +38,20 @@ class SpecialityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'          => 'required|max:70',
+            'description'   => 'required|max:255',
+            'field'         => 'required|integer'
+        ]);
+
+        Speciality::create([
+            'name'          => $request->name,
+            'description'   => $request->description,
+            'field_id'      => $request->field,
+        ]);
+
+        return redirect()->route('specialities.index')
+            ->with('toast_success', 'Speciality created successfully.');
     }
 
     /**
@@ -57,7 +73,8 @@ class SpecialityController extends Controller
      */
     public function edit(Speciality $speciality)
     {
-        //
+        $fields = Field::all();
+        return view('dashboard.admin.speciality_edit', compact('speciality', 'fields'));
     }
 
     /**
@@ -69,7 +86,19 @@ class SpecialityController extends Controller
      */
     public function update(Request $request, Speciality $speciality)
     {
-        //
+        $request->validate([
+            'name'          => 'required|max:70',
+            'description'   => 'required|max:255',
+            'field'         => 'required|integer'
+        ]);
+
+        $speciality->update([
+            $speciality->name        = $request->name,
+            $speciality->description = $request->description,
+            $speciality->field_id       = $request->field,
+        ]);
+
+        return redirect(route('specialities.index'));
     }
 
     /**
@@ -80,6 +109,8 @@ class SpecialityController extends Controller
      */
     public function destroy(Speciality $speciality)
     {
-        //
+        $speciality->delete();
+
+        return redirect(route('specialities.index'))->with('success', 'Speciality deleted successfully.');
     }
 }

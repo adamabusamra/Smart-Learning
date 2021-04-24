@@ -14,7 +14,8 @@ class FieldController extends Controller
      */
     public function index()
     {
-        //
+        $fields = Field::all();
+        return view('dashboard.admin.field_index', compact('fields'));
     }
 
     /**
@@ -24,7 +25,7 @@ class FieldController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.field_create');
     }
 
     /**
@@ -35,7 +36,28 @@ class FieldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'          => 'required|max:70',
+            'description'   => 'required|max:255',
+            'image'         => 'sometimes|nullable|mimes:jpeg,jpg,png|max:1000'
+        ]);
+
+        // Storing image in storage and setting the image's name in database
+        if ($file = $request->file('image')) {
+            $file_name =  rand() . $file->getClientOriginalName();
+            $file->move('field/images', $file_name);
+        } else {
+            $file_name = "default-field.png";
+        }
+
+        Field::create([
+            'name'          => $request->name,
+            'description'   => $request->description,
+            'image'         => $file_name,
+        ]);
+
+        return redirect()->route('fields.index')
+            ->with('toast_success', 'Field created successfully.');
     }
 
     /**
@@ -57,7 +79,7 @@ class FieldController extends Controller
      */
     public function edit(Field $field)
     {
-        //
+        return view('dashboard.admin.field_edit', compact('field'));
     }
 
     /**
@@ -69,7 +91,28 @@ class FieldController extends Controller
      */
     public function update(Request $request, Field $field)
     {
-        //
+        $request->validate([
+            'name'          => 'required|max:70',
+            'description'   => 'required|max:255',
+            'image'         => 'sometimes|nullable|mimes:jpeg,jpg,png|max:1000'
+        ]);
+
+        //Getting old image or replacing with new one if exists
+        if ($file = $request->file('image')) {
+            $file_name =  rand() . $file->getClientOriginalName();
+            $file->move('field/images', $file_name);
+            $image = $file_name;
+        } else {
+            $image = $field->image;
+        }
+
+        $field->update([
+            $field->name        = $request->name,
+            $field->description = $request->description,
+            $field->image       = $image,
+        ]);
+
+        return redirect(route('fields.index'));
     }
 
     /**
@@ -80,6 +123,8 @@ class FieldController extends Controller
      */
     public function destroy(Field $field)
     {
-        //
+        $field->delete();
+
+        return redirect(route('fields.index'))->with('success', 'Field deleted successfully.');
     }
 }

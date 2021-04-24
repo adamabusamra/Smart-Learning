@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FieldController;
+use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\TeacherController;
 
 /*
@@ -53,12 +55,16 @@ Route::get('/admission', function () {
 # Dashboard routes
 ##
 
-# Admin Routes
 Route::prefix('dashboard')->group(function () {
+    # Admin Routes
     Route::resource('admins', AdminController::class);
-});
 
-# Admin Routes
-Route::prefix('dashboard')->group(function () {
+    # Teacher Routes
     Route::resource('teachers', TeacherController::class);
+
+    # Field Routes
+    Route::resource('fields', FieldController::class);
+
+    # Speciality Routes
+    Route::resource('specialities', SpecialityController::class);
 });

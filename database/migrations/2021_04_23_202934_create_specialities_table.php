@@ -17,6 +17,7 @@ class CreateSpecialitiesTable extends Migration
             $table->id();
             // The Field Foreign key is referenced in a seperate migratiion
             $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
