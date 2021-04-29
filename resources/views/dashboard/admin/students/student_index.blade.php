@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Speciality | Display All Specialities
+Student | Display All Students
 @endsection
 
 @section("sub_header")
@@ -10,14 +10,14 @@ Speciality | Display All Specialities
     <!--begin::Details-->
     <div class="d-flex align-items-center flex-wrap mr-2">
       <!--begin::Title-->
-      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Specialities</h5>
+      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Students</h5>
       <!--end::Title-->
       <!--begin::Separator-->
       <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
       <!--end::Separator-->
       <!--begin::Search Form-->
       <div class="d-flex align-items-center" id="kt_subheader_search">
-        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ count($specialities) }} Total</span>
+        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ count($students) }} Total</span>
         <form class="ml-5">
           <div class="input-group input-group-sm input-group-solid" style="max-width: 175px">
             <input type="text" class="form-control" id="kt_datatable_search_query" placeholder="Search...">
@@ -63,12 +63,12 @@ Speciality | Display All Specialities
 <div class="card card-custom">
   <div class="card-header flex-wrap border-0 pt-6 pb-0">
     <div class="card-title">
-      <h3 class="card-label">Specialities Table
-        <span class="d-block text-muted pt-2 font-size-sm">Datatable displaying all specialities</span></h3>
+      <h3 class="card-label">Students Table
+        <span class="d-block text-muted pt-2 font-size-sm">Datatable displaying all students</span></h3>
     </div>
     <div class="card-toolbar">
       <!--begin::Button-->
-      <a href="{{ route('specialities.create') }}" class="btn btn-primary font-weight-bolder">
+      <a href="{{ route('students.create') }}" class="btn btn-primary font-weight-bolder">
         <span class="svg-icon svg-icon-md">
           <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -82,7 +82,7 @@ Speciality | Display All Specialities
             </g>
           </svg>
           <!--end::Svg Icon-->
-        </span>New Speciality</a>
+        </span>New Student</a>
       <!--end::Button-->
     </div>
   </div>
@@ -92,11 +92,12 @@ Speciality | Display All Specialities
     <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
       <thead>
         <tr>
-          <th title="Speciality #1">Speciality</th>
-          <th title="Speciality #2">Description</th>
-          <th title="Speciality #3">Field</th>
-          <th title="Speciality #4">Created At</th>
-          <th title="Speciality #5">Actions</th>
+          <th title="Field #1">Student</th>
+          <th title="Field #2">Email</th>
+          <th title="Field #3">Study Field</th>
+          <th title="Field #4">Country</th>
+          <th title="Field #5">Created At</th>
+          <th title="Field #6">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -104,14 +105,25 @@ Speciality | Display All Specialities
         $counter = 0
         @endphp
 
-        @foreach ($specialities as $speciality)
-        <td>{{$speciality->name}}</td>
-        <td>{{$speciality->description}}</td>
-        <td>{{$speciality->field->name}}</td>
-        <td>{{$speciality->created_at}}</td>
+        @foreach ($students as $student)
+
+        <td>
+          <div class="d-flex align-items-center">
+            <div class="symbol symbol-40 symbol-sm flex-shrink-0"> <img class=""
+                src="{{ asset('student/images/'.$student->image) }}" alt="Student Image"> </div>
+            <div class="ml-4">
+              <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
+                {{$student->first_name}} {{$student->last_name}}</div>
+            </div>
+          </div>
+        </td>
+        <td>{{$student->email}}</td>
+        <td>{{$student->field->name}}</td>
+        <td>{{$student->country}}</td>
+        <td>{{$student->created_at}}</td>
         <td>
           <span style="overflow: visible; position: relative; width: 130px;">
-            <a href="{{route('specialities.edit',$speciality->id)}}"
+            <a href="{{route('students.edit',$student->id)}}"
               class="btn btn-sm btn-default btn-text-primary btn-hover-warning btn-icon mr-2" title="Edit details">
               <span class="svg-icon svg-icon-md">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -130,11 +142,11 @@ Speciality | Display All Specialities
                 </svg>
               </span>
             </a>
-            <form class='d-inline' action="{{route('specialities.destroy',$speciality->id)}}" method="POST"
-              id="delete-speciality-form-{{$counter}}">
+            <form class='d-inline' action="{{route('students.destroy',$student->id)}}" method="POST"
+              id="delete-student-form-{{$counter}}">
               @csrf
               @method('DELETE')
-              <button class="btn btn-sm btn-default btn-text-primary btn-hover-danger btn-icon delete-speciality"
+              <button class="btn btn-sm btn-default btn-text-primary btn-hover-danger btn-icon delete-student"
                 title="Delete" type="button" id="{{$counter}}" onclick="deleteFunction(this.id)">
                 <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24"
@@ -173,7 +185,7 @@ Speciality | Display All Specialities
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>
   deleteFunction = (id)=>{
-  var form = document.getElementById(`delete-speciality-form-${id}`)
+  var form = document.getElementById(`delete-student-form-${id}`)
   Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",

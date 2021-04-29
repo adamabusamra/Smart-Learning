@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-Admin | Display All Admins
+Speciality | Display All Specialities
 @endsection
 
 @section("sub_header")
@@ -10,14 +10,14 @@ Admin | Display All Admins
     <!--begin::Details-->
     <div class="d-flex align-items-center flex-wrap mr-2">
       <!--begin::Title-->
-      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Admins</h5>
+      <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Specialities</h5>
       <!--end::Title-->
       <!--begin::Separator-->
       <div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-5 bg-gray-200"></div>
       <!--end::Separator-->
       <!--begin::Search Form-->
       <div class="d-flex align-items-center" id="kt_subheader_search">
-        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ count($admins) }} Total</span>
+        <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">{{ count($specialities) }} Total</span>
         <form class="ml-5">
           <div class="input-group input-group-sm input-group-solid" style="max-width: 175px">
             <input type="text" class="form-control" id="kt_datatable_search_query" placeholder="Search...">
@@ -63,12 +63,12 @@ Admin | Display All Admins
 <div class="card card-custom">
   <div class="card-header flex-wrap border-0 pt-6 pb-0">
     <div class="card-title">
-      <h3 class="card-label">Admins Table
-        <span class="d-block text-muted pt-2 font-size-sm">Datatable displaying all admins</span></h3>
+      <h3 class="card-label">Specialities Table
+        <span class="d-block text-muted pt-2 font-size-sm">Datatable displaying all specialities</span></h3>
     </div>
     <div class="card-toolbar">
       <!--begin::Button-->
-      <a href="{{ route('admins.create') }}" class="btn btn-primary font-weight-bolder">
+      <a href="{{ route('specialities.create') }}" class="btn btn-primary font-weight-bolder">
         <span class="svg-icon svg-icon-md">
           <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
@@ -82,7 +82,7 @@ Admin | Display All Admins
             </g>
           </svg>
           <!--end::Svg Icon-->
-        </span>New Admin</a>
+        </span>New Speciality</a>
       <!--end::Button-->
     </div>
   </div>
@@ -92,11 +92,11 @@ Admin | Display All Admins
     <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
       <thead>
         <tr>
-          <th title="Field #1">Admin</th>
-          <th title="Field #2">Email</th>
-          <th title="Field #3">Created At</th>
-          <th title="Field #4">Role</th>
-          <th title="Field #5">Actions</th>
+          <th title="Speciality #1">Speciality</th>
+          <th title="Speciality #2">Description</th>
+          <th title="Speciality #3">Field</th>
+          <th title="Speciality #4">Created At</th>
+          <th title="Speciality #5">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -104,35 +104,14 @@ Admin | Display All Admins
         $counter = 0
         @endphp
 
-        @foreach ($admins as $admin)
-
-        <td>
-          <div class="d-flex align-items-center">
-            <div class="symbol symbol-40 symbol-sm flex-shrink-0"> <img class=""
-                src="{{ asset('admin/profile_images/'.$admin->image) }}" alt="Admin Image"> </div>
-            <div class="ml-4">
-              <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">{{$admin->name}}</div>
-            </div>
-          </div>
-        </td>
-        <td>{{$admin->email}}</td>
-        <td>{{$admin->created_at}}</td>
-        @if ($admin->isSuperAdmin)
-        <td>
-          <span style="width: 146px;">
-            <span class="label label-lg font-weight-bold  label-light-success label-inline">Super Admin</span>
-          </span>
-        </td>
-        @else
-        <td>
-          <span style="width: 146px;">
-            <span class="label label-lg font-weight-bold  label-light-primary label-inline">Admin</span>
-          </span>
-        </td>
-        @endif
+        @foreach ($specialities as $speciality)
+        <td>{{$speciality->name}}</td>
+        <td>{{$speciality->description}}</td>
+        <td>{{$speciality->field->name}}</td>
+        <td>{{$speciality->created_at}}</td>
         <td>
           <span style="overflow: visible; position: relative; width: 130px;">
-            <a href="{{route('admins.edit',$admin->id)}}"
+            <a href="{{route('specialities.edit',$speciality->id)}}"
               class="btn btn-sm btn-default btn-text-primary btn-hover-warning btn-icon mr-2" title="Edit details">
               <span class="svg-icon svg-icon-md">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -151,11 +130,11 @@ Admin | Display All Admins
                 </svg>
               </span>
             </a>
-            <form class='d-inline' action="{{route('admins.destroy',$admin->id)}}" method="POST"
-              id="delete-admin-form-{{$counter}}">
+            <form class='d-inline' action="{{route('specialities.destroy',$speciality->id)}}" method="POST"
+              id="delete-speciality-form-{{$counter}}">
               @csrf
               @method('DELETE')
-              <button class="btn btn-sm btn-default btn-text-primary btn-hover-danger btn-icon delete-admin"
+              <button class="btn btn-sm btn-default btn-text-primary btn-hover-danger btn-icon delete-speciality"
                 title="Delete" type="button" id="{{$counter}}" onclick="deleteFunction(this.id)">
                 <span class="svg-icon svg-icon-md"> <svg xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24"
@@ -191,10 +170,11 @@ Admin | Display All Admins
 
 @section('page_scripts')
 <script src="{{ asset('assets/js/pages/crud/ktdatatable/base/html-table.js') }}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{{-- The theme already has sweet alert --}}
+{{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}
 <script>
   deleteFunction = (id)=>{
-  var form = document.getElementById(`delete-admin-form-${id}`)
+  var form = document.getElementById(`delete-speciality-form-${id}`)
   Swal.fire({
   title: 'Are you sure?',
   text: "You won't be able to revert this!",

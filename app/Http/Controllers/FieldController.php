@@ -15,7 +15,7 @@ class FieldController extends Controller
     public function index()
     {
         $fields = Field::all();
-        return view('dashboard.admin.field_index', compact('fields'));
+        return view('dashboard.admin.fields.field_index', compact('fields'));
     }
 
     /**
@@ -25,7 +25,7 @@ class FieldController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.field_create');
+        return view('dashboard.admin.fields.field_create');
     }
 
     /**
@@ -68,7 +68,11 @@ class FieldController extends Controller
      */
     public function show(Field $field)
     {
-        //
+        return $field;
+    }
+    public function field_specialities(Field $field)
+    {
+        return $field->specialities;
     }
 
     /**
@@ -79,7 +83,7 @@ class FieldController extends Controller
      */
     public function edit(Field $field)
     {
-        return view('dashboard.admin.field_edit', compact('field'));
+        return view('dashboard.admin.fields.field_edit', compact('field'));
     }
 
     /**

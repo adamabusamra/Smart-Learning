@@ -83,9 +83,10 @@ Speciality | Create Specialities
                         @if (!count($fields))
                         <option value="" selected>No Fields</option>
                         @else
-                        @foreach ($fields as $field)
                         <option value="" selected hidden>Select Field</option>
-                        <option value="{{$field->id}}" {{old('field') ? 'selected':''}}>{{$field->name}}</option>
+                        @foreach ($fields as $field)
+                        <option value="{{$field->id}}" {{old('field') == $field->id  ? 'selected':''}}>{{$field->name}}
+                        </option>
                         @endforeach
                         @endif
                       </select>

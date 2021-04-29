@@ -9,4 +9,9 @@ class Field extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'description', 'image'];
+
+    public function specialities()
+    {
+        return $this->hasMany(Speciality::class);
+    }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\SpecialityController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 
 /*
@@ -62,9 +63,18 @@ Route::prefix('dashboard')->group(function () {
     # Teacher Routes
     Route::resource('teachers', TeacherController::class);
 
+    # Student Routes
+    Route::resource('students', StudentController::class);
+
     # Field Routes
     Route::resource('fields', FieldController::class);
+    //Route to return all specialities related to a certain field
+    Route::get('/fields/{field}/specialities', [FieldController::class, 'field_specialities']);
 
     # Speciality Routes
     Route::resource('specialities', SpecialityController::class);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

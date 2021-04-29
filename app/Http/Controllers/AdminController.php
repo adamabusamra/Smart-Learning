@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         $admins = Admin::all();
-        return view('dashboard.admin.admin_index', compact('admins'));
+        return view('dashboard.admin.admins.admin_index', compact('admins'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.admin_create');
+        return view('dashboard.admin.admins.admin_create');
     }
 
     /**
@@ -88,7 +88,7 @@ class AdminController extends Controller
      */
     public function edit(Admin $admin)
     {
-        return view('dashboard.admin.admin_edit', compact('admin'));
+        return view('dashboard.admin.admins.admin_edit', compact('admin'));
     }
 
     /**

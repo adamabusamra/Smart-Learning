@@ -16,7 +16,7 @@ class SpecialityController extends Controller
     public function index()
     {
         $specialities = Speciality::all();
-        return view('dashboard.admin.speciality_index', compact('specialities'));
+        return view('dashboard.admin.specialities.speciality_index', compact('specialities'));
     }
 
     /**
@@ -27,7 +27,7 @@ class SpecialityController extends Controller
     public function create()
     {
         $fields = Field::all();
-        return view('dashboard.admin.speciality_create', compact('fields'));
+        return view('dashboard.admin.specialities.speciality_create', compact('fields'));
     }
 
     /**
@@ -62,7 +62,7 @@ class SpecialityController extends Controller
      */
     public function show(Speciality $speciality)
     {
-        //
+        return $speciality;
     }
 
     /**
@@ -74,7 +74,7 @@ class SpecialityController extends Controller
     public function edit(Speciality $speciality)
     {
         $fields = Field::all();
-        return view('dashboard.admin.speciality_edit', compact('speciality', 'fields'));
+        return view('dashboard.admin.specialities.speciality_edit', compact('speciality', 'fields'));
     }
 
     /**

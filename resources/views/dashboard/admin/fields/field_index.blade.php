@@ -177,7 +177,8 @@ Field | Display All Fields
 
 @section('page_scripts')
 <script src="{{ asset('assets/js/pages/crud/ktdatatable/base/html-table.js') }}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{{-- The theme already has sweet alert --}}
+{{-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> --}}
 <script>
   deleteFunction = (id)=>{
   var form = document.getElementById(`delete-field-form-${id}`)
