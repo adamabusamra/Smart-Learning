@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin-dashboard')
 
 @section('title')
 Teacher | Edit {{ $teacher->first_name}} {{ $teacher->last_name}}

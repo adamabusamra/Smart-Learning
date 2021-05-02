@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'dashboard/admin/teachers';
 
     /**
      * Create a new controller instance.
@@ -36,5 +38,30 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:student')->except('logout');
+        $this->middleware('guest:teacher')->except('logout');
+    }
+
+    public function showNonDefaultLoginForm()
+    {
+        return view('auth.smart-learing-login');
+    }
+
+    public function nonDefaultLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('teacher')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            return redirect()->intended('/dashboard/teacher/home');
+        }
+        if (Auth::guard('student')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+            return redirect()->intended('/dashboard/student/home');
+        }
+        return back()
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors(['bad-cred' => 'Invalid Login Credentials']);
     }
 }

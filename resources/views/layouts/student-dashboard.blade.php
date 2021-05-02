@@ -119,7 +119,7 @@
               <!--begin::Menu Nav-->
               <ul class="menu-nav">
                 <li class="menu-item" aria-haspopup="true">
-                  <a href="index.html" class="menu-link">
+                  <a href="{{route('teachers.index')}}" class="menu-link">
                     <i class="menu-icon flaticon-home"></i>
                     <span class="menu-text">Dashboard</span>
                   </a>

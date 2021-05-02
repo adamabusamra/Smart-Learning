@@ -1,145 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!--begin::Head-->
+<html lang="zxx">
+  <!-- Mirrored from keenitsolutions.com/products/html/educavo/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Jan 2021 21:34:39 GMT -->
 
-    <head>
-        <base href="../../">
-        <meta charset="utf-8" />
-        <title>@yield('title')</title>
-        <meta name="description" content=@yield('description') />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <!--begin::Fonts-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-        <!--end::Fonts-->
-        @yield('page_css')
-        <!--begin::Page Custom Styles(used by this page)-->
-        <link href="{{asset ('assets/css/pages/login/login-4.css')}}" rel="stylesheet" type="text/css" />
-        <!--end::Page Custom Styles-->
-        <!--begin::Global Theme Styles(used by all pages)-->
-        <link href="{{asset ('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/plugins/custom/prismjs/prismjs.bundle.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-        <!--end::Global Theme Styles-->
-        <!--begin::Layout Themes(used by all pages)-->
-        <link href="{{asset ('assets/css/themes/layout/header/base/light.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset ('assets/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
-        <!--end::Layout Themes-->
-        <link rel="shortcut icon" href="{{asset ('assets/media/logos/favicon.png')}}" />
-    </head>
-    <!--end::Head-->
-    <!--begin::Body-->
+  <head>
+    <!-- meta tag -->
+    <meta charset="UTF-8">
+    <title>@yield('title')</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/fav-orange.png')}}">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="{{asset ('assets/css/bootstrap.min.css')}}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/animate.css')}}">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/owl.carousel.css')}}">
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/off-canvas.css')}}">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/linea-fonts.css')}}">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/flaticon.css')}}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/magnific-popup.css')}}">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="{{asset('assets/css/rsmenu-main.css')}}">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/rs-spacing.css')}}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css')}}">
+  </head>
 
-    <body id="kt_body"
-        class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
-        <!--begin::Main-->
-        <div class="d-flex flex-column flex-root">
-            <!--begin::Login-->
-            <div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid">
-                <!--begin::Content-->
-                <div
-                    class="login-container order-2 order-lg-1 d-flex flex-center flex-row-fluid px-7 pt-lg-0 pb-lg-0 pt-4 pb-6 bg-white">
-                    <!--begin::Wrapper-->
-                    <div class="login-content d-flex flex-column pt-lg-0 pt-12">
-                        <!--begin::Logo-->
-                        <a href="#" class="login-logo pb-xl-10 pb-7" style="margin-left: -20px">
-                            <img src="{{asset ('assets/media/logos/logo.png')}}" class="max-h-120px" alt="" />
-                        </a>
-                        <!--end::Logo-->
-                        <!--begin::Signin-->
-                        <div class="login-form">
-                            <!--begin::Form-->
-                            <form class="form" id="kt_login_singin_form" action="{{ route('login') }}" method="POST">
-                                @csrf
-                                <!--begin::Title-->
-                                <div class="pb-5 pb-lg-15">
-                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Sign In</h3>
-                                    <div class="text-muted font-weight-bold font-size-h4">Not a student?
-                                        <a href="custom/pages/login/login-4/signup.html"
-                                            class="text-primary font-weight-bolder">Teacher Login</a></div>
-                                </div>
-                                <!--begin::Title-->
-                                <!--begin::Form group-->
-                                <div class="form-group">
-                                    <label class="font-size-h6 font-weight-bolder text-dark">Your Email</label>
-                                    <input
-                                        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0 @error('email') is-invalid @enderror"
-                                        type="text" name="email" autocomplete="email" value="{{ old('email') }}" />
-                                    @error('email')
-                                    <div class="fv-help-block">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-                                <!--end::Form group-->
-                                <!--begin::Form group-->
-                                <div class="form-group">
-                                    <div class="d-flex justify-content-between mt-n5">
-                                        <label class="font-size-h6 font-weight-bolder text-dark pt-5">Your
-                                            Password</label>
-                                    </div>
-                                    <input
-                                        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg border-0 @error('email') is-invalid @enderror"
-                                        type="password" name="password" autocomplete="off" />
-                                    @error('password')
-                                    <div class="fv-help-block">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <!--end::Form group-->
-                                <!--begin::Action-->
-                                <div class="pb-lg-0 pb-5">
-                                    <button type="submit" id="kt_login_singin_form_submit_button"
-                                        class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
-                                        In</button>
-                                </div>
-                                <!--end::Action-->
-                            </form>
-                            <!--end::Form-->
-                        </div>
-                        <!--end::Signin-->
-                    </div>
-                    <!--end::Wrapper-->
-                </div>
-                <!--begin::Content-->
-                <!--begin::Aside-->
-                <div class="login-aside order-1 order-lg-2 bgi-no-repeat bgi-position-x-right">
-                    <div class="login-conteiner bgi-no-repeat bgi-position-x-right bgi-position-y-bottom"
-                        style="background-image: url(assets/media/svg/illustrations/login-visual-4.svg);">
-                        <!--begin::Aside title-->
-                        <h3
-                            class="pt-lg-40 pl-lg-20 pb-lg-0 pl-10 py-20 m-0 d-flex justify-content-lg-start font-weight-boldest display5 display1-lg text-white">
-                            Learn the
-                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Smart
-                            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Way</h3>
-                        <!--end::Aside title-->
-                    </div>
-                </div>
-                <!--end::Aside-->
-            </div>
-            <!--end::Login-->
+  <body class="defult-home">
+    <!--Preloader area start here-->
+    <div id="loader" class="loader orange-color">
+      <div class="loader-container">
+        <div class="loader-icon">
+          <img src="{{asset('assets/images/pre-logo1.png')}}" alt="" />
         </div>
-        <!--end::Main-->
-        <script>
-            var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";
-        </script>
-        <!--begin::Global Config(global config for global JS scripts)-->
-        <script>
-            var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };
-        </script>
-        <!--end::Global Config-->
-        <!--begin::Global Theme Bundle(used by all pages)-->
-        <script src="{{asset ('assets/plugins/global/plugins.bundle.js')}}"></script>
-        <script src="{{asset ('assets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
-        <script src="{{asset ('assets/js/scripts.bundle.js')}}"></script>
-        <!--end::Global Theme Bundle-->
-        <!--begin::Page Scripts(used by this page)-->
-        @yield('page_scripts')
-        <script src="{{asset ('assets/js/pages/custom/login/login-main.js')}}"></script>
-        <!--end::Page Scripts-->
-        <!--start::Sweet Alert Laravel-->
-        @include('sweetalert::alert')
-        <!--end::Sweet Alert Laravel-->
-    </body>
-    <!--end::Body-->
+      </div>
+    </div>
+    <!--Preloader area End here-->
+
+    <!-- My Account Section Start -->
+    <div class="rs-login pt-100 pb-100 md-pt-70 md-pb-70">
+      <div class="container">
+        <div class="noticed">
+          <div class="main-part">
+            <div class="method-account">
+              <!--begin::Logo-->
+              <a href="#" class="login-logo pb-xl-10 pb-7" style="margin-left: -20px">
+                <img src="{{asset ('assets/media/logos/logo.png')}}" class="mb-5" alt="" width="280" />
+              </a>
+              <!--end::Logo-->
+              <h2 class="login">Admin Login</h2>
+              <form action="{{route('login')}}" method="POST">
+                @csrf
+                <div class="text-left">
+                  @error('email')
+                  <span class="text-danger text-left">{{ $message }}</span>
+                  @enderror
+                  @if ($errors->has('bad-cred'))
+                  <span class="text-danger text-left">{{ $errors->first('bad-cred') }}</span>
+                  @endif
+                  <input type="email" name="email" placeholder="E-mail" value="{{old('email')}}" />
+                  @error('password')
+                  <span class="text-danger text-left">{{ $message }}</span>
+                  @enderror
+                  <input type="password" name="password" placeholder="Password" />
+                </div>
+                <button type="submit" class="readon submit-btn">login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- My Account Section End -->
+    <!-- Main content End -->
+
+    <!-- start scrollUp  -->
+    <div id="scrollUp" class="orange-color">
+      <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- End scrollUp  -->
+
+    <!-- Search Modal Start -->
+    <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span class="flaticon-cross"></span>
+      </button>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="search-block clearfix">
+            <form>
+              <div class="form-group">
+                <input class="form-control" placeholder="Search Here..." type="text" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Search Modal End -->
+    <!-- modernizr js -->
+    <script src="{{ asset('assets/js/modernizr-2.8.3.min.js')}}"></script>
+    <!-- jquery latest version -->
+    <script src="{{ asset('assets/js/jquery.min.js')}}"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+    <!-- Menu js -->
+    <script src="{{ asset('assets/js/rsmenu-main.js')}}"></script>
+    <!-- op nav js -->
+    <script src="{{ asset('assets/js/jquery.nav.js')}}"></script>
+    <!-- owl.carousel js -->
+    <script src="{{ asset('assets/js/owl.carousel.min.js')}}"></script>
+    <!-- Slick js -->
+    <script src="{{ asset('assets/js/slick.min.js')}}"></script>
+    <!-- isotope.pkgd.min js -->
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js')}}"></script>
+    <!-- imagesloaded.pkgd.min js -->
+    <script src="{{ asset('assets/js/imagesloaded.pkgd.min.js')}}"></script>
+    <!-- wow js -->
+    <script src="{{ asset('assets/js/wow.min.js')}}"></script>
+    <!-- Skill bar js -->
+    <script src="{{ asset('assets/js/skill.bars.jquery.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js')}}"></script>
+    <!-- counter top js -->
+    <script src="{{ asset('assets/js/waypoints.min.js')}}"></script>
+    <!-- video js -->
+    <script src="{{ asset('assets/js/jquery.mb.YTPlayer.min.js')}}"></script>
+    <!-- magnific popup js -->
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <!-- plugins js -->
+    <script src="{{ asset('assets/js/plugins.js')}}"></script>
+    <!-- contact form js -->
+    <script src="{{ asset('assets/js/contact.form.js')}}"></script>
+    <!-- main js -->
+    <script src="{{ asset('assets/js/main.js')}}"></script>
+  </body>
+
+  <!-- Mirrored from keenitsolutions.com/products/html/educavo/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Jan 2021 21:34:39 GMT -->
 
 </html>

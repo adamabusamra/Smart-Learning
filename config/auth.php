@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'admin',
         'passwords' => 'users',
     ],
 
@@ -46,6 +46,36 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+            'hash' => false,
+        ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+
+        'teacher-api' => [
+            'driver' => 'token',
+            'provider' => 'teachers',
+            'hash' => false,
+        ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
+        'student-api' => [
+            'driver' => 'token',
+            'provider' => 'students',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -69,6 +99,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Teacher::class,
+        ],
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
         ],
 
         // 'users' => [

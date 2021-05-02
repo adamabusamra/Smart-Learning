@@ -116,7 +116,7 @@ class FieldController extends Controller
             $field->image       = $image,
         ]);
 
-        return redirect(route('fields.index'));
+        return redirect(route('fields.index'))->with('toast_success', 'Field updated successfully.');
     }
 
     /**

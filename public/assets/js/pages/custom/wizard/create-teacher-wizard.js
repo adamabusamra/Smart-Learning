@@ -251,7 +251,7 @@ jQuery(document).ready(function () {
         let id = $(this).val();
         $.ajax({
             type: "GET",
-            url: `dashboard/fields/${id}/specialities`,
+            url: `/dashboard/admin/fields/${id}/specialities`,
             success: function (data) {
                 $('[name="speciality"]')
                     .empty()
