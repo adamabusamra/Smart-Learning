@@ -6,6 +6,7 @@ use App\Models\Competency;
 use App\Models\Project;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
@@ -17,7 +18,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::all();
+        return view('dashboard.teacher.projects.project_index', compact('projects'));
     }
 
     /**
@@ -90,7 +92,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('dashboard.teacher.projects.project_single', compact('project'));
     }
 
     /**
@@ -101,7 +103,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return "edit project";
     }
 
     /**
@@ -124,6 +126,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        // $project->subjects()->detach($project->id);
+        DB::table('project_subject')->where('project_id', $project->id)->delete();
+        $project->delete();
+
+        return redirect(route('projects.index'))->with('success', 'Project deleted successfully.');
     }
 }
