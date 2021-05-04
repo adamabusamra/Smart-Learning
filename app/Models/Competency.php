@@ -14,4 +14,12 @@ class Competency extends Model
     {
         return $this->belongsToMany(Project::class);
     }
+    public function submitProjects()
+    {
+        return $this->belongsToMany(SubmitProject::class);
+    }
+    public function evaluatedProjects()
+    {
+        return $this->belongsToMany(ProjectEvaluation::class);
+    }
 }

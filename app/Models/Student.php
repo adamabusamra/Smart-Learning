@@ -18,4 +18,8 @@ class Student extends Authenticatable
     {
         return $this->belongsTo(Field::class);
     }
+    // public function submitProjects()
+    // {
+    //     return $this->hasMany(SubmitProject::class);
+    // }
 }

@@ -1,4 +1,8 @@
-@extends('layouts.teacher-dashboard')
+{{-- @extends((auth()->guard('teacher')->check() ? 'layouts.teacher-dashboard' : auth()->guard('student')->check() ?
+'layouts.student-dashboard')) --}}
+{{-- @extends('layouts.teacher-dashboard') --}}
+@extends((auth()->guard('teacher')->check() ? 'layouts.teacher-dashboard' : 'layouts.student-dashboard'))
+
 
 @section('title')
 Project | Display All Projects
@@ -92,14 +96,28 @@ Project | Display All Projects
                   <li class="navi-header pb-1">
                     <span class="text-primary text-uppercase font-weight-bold font-size-sm">Actions:</span>
                   </li>
+                  @if (auth()->guard('teacher')->check())
                   <li class="navi-item">
                     <a href="#" class="navi-link">
                       <span class="navi-icon">
                         <i class="flaticon2-graph-1"></i>
                       </span>
-                      <span class="navi-text">Report</span>
+                      <span class="navi-text">View Submits</span>
                     </a>
                   </li>
+                  @endif
+                  @if (auth()->guard('student')->check())
+                  <li class="navi-item">
+                    <a href="#" class="navi-link">
+                      <span class="navi-icon">
+                        <i class="flaticon2-graph-1"></i>
+                      </span>
+                      <span class="navi-text">Submit</span>
+                    </a>
+                  </li>
+                  @endif
+                  @if (auth()->guard('teacher')->check())
+
                   <li class="navi-item">
                     <a href="{{route('projects.edit',$project->id)}}" class="navi-link">
                       <span class="navi-icon">
@@ -121,6 +139,7 @@ Project | Display All Projects
                       </a>
                     </form>
                   </li>
+                  @endif
                 </ul>
                 <!--end::Navigation-->
               </div>
@@ -135,7 +154,8 @@ Project | Display All Projects
             <div class="">
               <a href="{{route('projects.show',$project->id)}}"
                 class="text-dark text-hover-primary font-size-h4 font-weight-bolder mb-1">{{$project->title}}</a>
-              <span class="ml-4 text-muted font-weight-bold">{{auth()->user()->speciality->field->name}}</span>
+              <span
+                class="ml-4 text-muted font-weight-bold">{{auth()->guard('teacher')->check() ? auth()->user()->speciality->field->name : auth()->user()->field->name }}</span>
             </div>
             <!--end::Title-->
           </div>

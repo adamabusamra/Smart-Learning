@@ -16,8 +16,8 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id')->index();
             $table->string('title');
-            $table->string('short_description');
-            $table->string('long_description');
+            $table->longText('short_description');
+            $table->longText('long_description');
             $table->string('time_status')->default('due');
             $table->string('image');
             $table->string('resources')->nullable();
@@ -26,7 +26,7 @@ class CreateProjectsTable extends Migration
             // $table->string('learning_methods');
             // $table->string('performance_criteria');
             // $table->string('assessment_methods');
-            $table->string('deliverables');
+            $table->longText('deliverables');
             $table->timestamps();
         });
     }
