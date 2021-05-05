@@ -71,11 +71,11 @@
                                 <ul class="topbar-contact">
                                     <li>
                                         <i class="flaticon-email"></i>
-                                        <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                                        <a href="mailto:support@rstheme.com">info@smartlearning.com</a>
                                     </li>
                                     <li>
                                         <i class="flaticon-location"></i>
-                                        374 William S Canning Blvd, MA 2721, USA
+                                        374 Ghaleb Abu Abboud St, Amman, Jordan
                                     </li>
                                 </ul>
                             </div>
@@ -83,10 +83,11 @@
                                 <ul class="topbar-right">
                                     <li class="login-register">
                                         <i class="fa fa-sign-in"></i>
-                                        <a href="login.html">Login</a>
+                                        <a href="/dashboard/login">Login</a>
                                     </li>
                                     <li class="btn-part">
-                                        <a class="apply-btn" href="#">Apply Now</a>
+                                        {{-- <a class="apply-btn" href="#">Apply Now</a> --}}
+
                                     </li>
                                 </ul>
                             </div>
@@ -103,7 +104,8 @@
                                 <div class="logo-cat-wrap">
                                     <div class="logo-part">
                                         <a href='/'>
-                                            <img src="{{asset('assets/images/dark-logo.png')}}" alt="">
+                                            <img src="{{asset('assets/media/logos/logo.png')}}" alt=""
+                                                style="max-height: 95px">
                                         </a>
                                     </div>
                                 </div>
@@ -123,108 +125,14 @@
                                                 </li>
 
                                                 <li class="menu-item-has-children ">
-                                                    <a href="#">About</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="about.html">About One</a> </li>
-                                                        <li class="active"><a href="about2.html">About Two</a> </li>
-                                                    </ul>
+                                                    <a href="/about">About</a>
+                                                </li>
+                                                <li class="menu-item-has-children ">
+                                                    <a href="/blog">Blog</a>
                                                 </li>
 
                                                 <li class="menu-item-has-children">
-                                                    <a href="#">Courses</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="course.html">Courses One</a> </li>
-                                                        <li><a href="course2.html">Courses Two</a> </li>
-                                                        <li><a href="course3.html">Courses Three</a> </li>
-                                                        <li><a href="course4.html">Courses Four</a>
-                                                        </li>
-                                                        <li><a href="course5.html">Courses Five</a> </li>
-                                                        <li><a href="course6.html">Courses Six</a> </li>
-                                                        <li><a href="course-single.html">Courses Single</a> </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li class="menu-item-has-children">
-                                                    <a href="#">Pages</a>
-                                                    <ul class="sub-menu">
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Team</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="team.html">Team One</a></li>
-                                                                <li><a href="team2.html">Team Two</a></li>
-                                                                <li><a href="team-single.html">Team Single</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Event</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="events-style1.html">Event One</a></li>
-                                                                <li><a href="events-style2.html">Event Two</a></li>
-                                                                <li><a href="events-style3.html">Event Three</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Gallery</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="gallery-style1.html">Gallery One</a></li>
-                                                                <li><a href="gallery-style2.html">Gallery Two</a></li>
-                                                                <li><a href="gallery-style3.html">Gallery Three</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Shop</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="shop.html">Shop</a></li>
-                                                                <li><a href="shop-single.html">Shop Single</a></li>
-                                                                <li><a href="cart.html">Cart</a></li>
-                                                                <li><a href="checkout.html">Checkout</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Others</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="faq.html">FAQ</a></li>
-                                                                <li><a href="error.html">404 Page</a></li>
-                                                                <li><a href="login.html">Login</a></li>
-                                                                <li><a href="register.html">Register</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li class="menu-item-has-children">
-                                                    <a href="#">Blog</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="blog.html">Blog</a></li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Blog Sidebar</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                                                                <li><a href="blog-right.html">Blog Right Sidebar</a>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#">Single Post</a>
-                                                            <ul class="sub-menu">
-                                                                <li><a href="blog-post-left.html">Post Left Sidebar</a>
-                                                                </li>
-                                                                <li><a href="blog-post-right.html">Post Right
-                                                                        Sidebar</a></li>
-                                                                <li><a href="blog-single.html">Full Width Post</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li class="menu-item-has-children">
-                                                    <a href="#">Contact</a>
-                                                    <ul class="sub-menu">
-                                                        <li><a href="contact.html">Contact One</a> </li>
-                                                        <li><a href="contact2.html">Contact Two</a> </li>
-                                                        <li><a href="contact3.html">Contact Three</a> </li>
-                                                        <li><a href="contact4.html">Contact Four</a> </li>
-                                                    </ul>
+                                                    <a href="/contact">Contact</a>
                                                 </li>
                                             </ul> <!-- //.nav-menu -->
                                         </nav>
@@ -236,10 +144,10 @@
                                 <div class="expand-btn-inner">
                                     <ul>
                                         <li>
-                                            <a class="hidden-xs rs-search" data-target=".search-modal"
+                                            {{-- <a class="hidden-xs rs-search" data-target=".search-modal"
                                                 data-toggle="modal" href="#">
                                                 <i class="flaticon-search"></i>
-                                            </a>
+                                            </a> --}}
                                         </li>
                                     </ul>
                                 </div>
@@ -329,31 +237,11 @@
                                 <a href="index-2.html"><img src="assets/images/lite-logo.png" alt="" /></a>
                             </div>
                             <div class="textwidget white-color pr-60 md-pr-15">
-                                <p>
-                                    We denounce with righteous indi gnation and dislike men who
-                                    are so beguiled and demoralized by the charms of pleasure of
-                                    your moment, so blinded by desire those who fail weakness.
+                                <p class="text-white">
+                                    Education gives us knowledge of the world around us. It develops in us a perspective
+                                    of looking at life. It is the most important element in the evolution of the nation.
                                 </p>
                             </div>
-                            <ul class="footer_social">
-                                <li>
-                                    <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
-                                </li>
-                                <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a>
-                                </li>
-
-                                <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
-                                </li>
-                                <li>
-                                    <a href="# " target="_blank"><span><i
-                                                class="fa fa-google-plus-square"></i></span></a>
-                                </li>
-                                <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a>
-                                </li>
-                            </ul>
                         </div>
                         <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                             <h3 class="widget-title">Address</h3>
@@ -361,31 +249,29 @@
                                 <li>
                                     <i class="flaticon-location"></i>
                                     <div class="desc">
-                                        374 William S Canning Blvd, River MA 2721, USA
+                                        374 Ghaleb Abu Abboud St, Amman, Jordan
                                     </div>
                                 </li>
                                 <li>
                                     <i class="flaticon-call"></i>
                                     <div class="desc">
-                                        <a href="tel:(+880)155-69569">(+880)155-69569</a>
+                                        <a href="tel:(+962)770631308">(+962)770631308</a>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="flaticon-email"></i>
                                     <div class="desc">
-                                        <a href="mailto:support@rstheme.com">support@rstheme.com</a>
+                                        <a href="mailto:info@smartlearning.com<">info@smartlearning.com</a>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-12 col-sm-12 pl-50 md-pl-15 footer-widget md-mb-50">
-                            <h3 class="widget-title">Courses</h3>
+                            <h3 class="widget-title">Links</h3>
                             <ul class="site-map">
-                                <li><a href="#">Courses</a></li>
-                                <li><a href="#">Course Two</a></li>
-                                <li><a href="#">Single Course</a></li>
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Login/Register</a></li>
+                                <li><a href="/about">about</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/dashboard/login">Student/Teacher Login</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
@@ -428,16 +314,16 @@
                         <div class="col-lg-6 md-mb-20">
                             <div class="copyright">
                                 <p>
-                                    &copy; 2020 All Rights Reserved. Developed By
-                                    <a href="http://rstheme.com/">RSTheme</a>
+                                    &copy; 2021 All Rights Reserved. Developed By
+                                    <a href="http://rstheme.com/">Adam Abusamra</a>
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-6 text-right md-text-left">
                             <ul class="copy-right-menu">
-                                <li><a href="#">Event</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/contact">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -451,7 +337,7 @@
             <i class="fa fa-angle-up"></i>
         </div>
         <!-- End scrollUp  -->
-
+        {{-- 
         <!-- Search Modal Start -->
         <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -469,7 +355,7 @@
                 </div>
             </div>
         </div>
-        <!-- Search Modal End -->
+        <!-- Search Modal End --> --}}
 
         <!-- modernizr js -->
         <script src="{{ asset('assets/js/modernizr-2.8.3.min.js')}}"></script>

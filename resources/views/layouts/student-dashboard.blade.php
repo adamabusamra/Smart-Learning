@@ -35,9 +35,9 @@
     class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <!--begin::Main-->
     <!--begin::Header Mobile-->
-    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed max-w-92">
       <!--begin::Logo-->
-      <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" />
+      <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" style="max-width: 92px;" />
       <!--end::Logo-->
       <!--begin::Toolbar-->
       <div class="d-flex align-items-center">
@@ -46,11 +46,11 @@
           <span></span>
         </button>
         <!--end::Aside Mobile Toggle-->
-        <!--begin::Header Menu Mobile Toggle-->
+        {{-- <!--begin::Header Menu Mobile Toggle-->
         <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
           <span></span>
         </button>
-        <!--end::Header Menu Mobile Toggle-->
+        <!--end::Header Menu Mobile Toggle--> --}}
         <!--begin::Topbar Mobile Toggle-->
         <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
           <span class="svg-icon svg-icon-xl">
@@ -118,10 +118,20 @@
               data-menu-dropdown-timeout="500">
               <!--begin::Menu Nav-->
               <ul class="menu-nav">
-                <li class="menu-item" aria-haspopup="true">
+                {{-- <li class="menu-item" aria-haspopup="true">
                   <a href="{{route('teachers.index')}}" class="menu-link">
-                    <i class="menu-icon flaticon-home"></i>
-                    <span class="menu-text">Student Dashboard</span>
+                <i class="menu-icon flaticon-home"></i>
+                <span class="menu-text">Student Dashboard</span>
+                </a>
+                </li> --}}
+                <li class="menu-section">
+                  <h4 class="menu-text">Projects</h4>
+                  <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                </li>
+                <li class="menu-item" aria-haspopup="true">
+                  <a href="/dashboard/student/projects" class="menu-link">
+                    <i class="menu-icon flaticon2-file"></i>
+                    <span class="menu-text">Project Briefs</span>
                   </a>
                 </li>
                 <li class="menu-section">
@@ -129,132 +139,26 @@
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
-                  <a href="{{ route('projects.index') }}" class="menu-link">
-                    <i class="menu-icon flaticon2-file"></i>
-                    <span class="menu-text">Project Briefs</span>
-                  </a>
-                </li>
-                <li class="menu-item" aria-haspopup="true">
                   <a href="{{ route('student.evaluation') }}" class="menu-link">
                     <i class="menu-icon flaticon-download-1"></i>
                     <span class="menu-text">Assignments</span>
                   </a>
                 </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                  <a href="javascript:;" class="menu-link menu-toggle">
+                <li class="menu-item" aria-haspopup="true">
+                  <a href="/dashboard/student/competencies" class="menu-link">
                     <i class="menu-icon flaticon2-chart"></i>
                     <span class="menu-text">Competencies</span>
-                    <i class="menu-arrow"></i>
                   </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('competencies.create') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Add New Competency</span>
-                        </a>
-                      </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('competencies.index') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">All Competencies</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                  <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon-users"></i>
-                    <span class="menu-text">Subjects / Technologies</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('subjects.create') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">New Subject / Technology</span>
-                        </a>
-                      </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('subjects.index') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">All Subjects</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </li>
                 <li class="menu-section">
-                  <h4 class="menu-text">Education</h4>
+                  <h4 class="menu-text">Technologies</h4>
                   <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                  <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-rhombus"></i>
-                    <span class="menu-text">Fields</span>
-                    <i class="menu-arrow"></i>
+                <li class="menu-item" aria-haspopup="true">
+                  <a href="/dashboard/student/subjects" class="menu-link">
+                    <i class="menu-icon flaticon-layer"></i>
+                    <span class="menu-text">Subjects / Technologies</span>
                   </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('fields.create') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Create Field</span>
-                        </a>
-                      </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('fields.index') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Fields Table</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                  <a href="javascript:;" class="menu-link menu-toggle">
-                    <i class="menu-icon flaticon2-soft-icons-1"></i>
-                    <span class="menu-text">Specialities</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="menu-submenu">
-                    <i class="menu-arrow"></i>
-                    <ul class="menu-subnav">
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('specialities.create') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Create Speciality</span>
-                        </a>
-                      </li>
-                      <li class="menu-item" aria-haspopup="true">
-                        <a href="{{ route('specialities.index') }}" class="menu-link">
-                          <i class="menu-bullet menu-bullet-dot">
-                            <span></span>
-                          </i>
-                          <span class="menu-text">Specialities Table</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
                 </li>
               </ul>
               <!--end::Menu Nav-->

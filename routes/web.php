@@ -5,18 +5,25 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CompetencyController;
 use App\Http\Controllers\FieldController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectEvaluationController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Models\Field;
+use App\Models\News;
+use App\Models\Project;
+use App\Models\Student;
+use App\Models\Teacher;
 
 ##
 # Layout Routes --> for testing
 ##
 
 Route::get('/public', function () {
+
     return view('layouts.public');
 });
 Route::get('/dashboard', function () {
@@ -33,7 +40,16 @@ Route::get('/dashboard/student', function () {
 # Public Routes
 ##
 Route::get('/', function () {
-    return view('public.home');
+    $fields   = Field::all();
+    $students = Student::all();
+    $teachers = Teacher::all();
+    $projects = Project::all();
+    $news     = News::all();
+    return view('public.home', compact('fields', 'students', 'teachers', 'projects', 'news'));
+});
+Route::get('/blog', function () {
+    $news     = News::all();
+    return view('public.blog', compact('news'));
 });
 Route::get('/about', function () {
     return view('public.about');
@@ -41,9 +57,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('public.contact');
 });
-Route::get('/admission', function () {
-    return view('public.admission');
-});
+Route::get('/posts/{news}', [NewsController::class, 'show']);
 
 
 
@@ -71,6 +85,8 @@ Route::prefix('dashboard')->group(function () {
 
             # Speciality Routes
             Route::resource('specialities', SpecialityController::class);
+            # Posts Routes
+            Route::resource('posts', NewsController::class);
         });
         #Auth Routes for admin '/dashboard/admin/login'
         Auth::routes();
@@ -94,12 +110,19 @@ Route::prefix('dashboard')->group(function () {
     Route::prefix('student')->group(function () {
         Route::middleware('auth:student')->group(function () {
             # Projects Routes
-            Route::resource('projects', ProjectController::class)->only('index', 'show');
+            Route::get('/projects', [ProjectController::class, 'index']);
+            Route::get('/projects/{project}', [ProjectController::class, 'show']);
+
             //Routes for evaluations
             Route::get('/assignments', [ProjectEvaluationController::class, 'studentEvaluation'])->name('student.evaluation');
             //Routes for evaluations
             Route::post('/assignments', [ProjectEvaluationController::class, 'studentEvaluationSubmit'])->name('student.evaluation.submit');
             Route::get('/assignments/{id}', [ProjectEvaluationController::class, 'StudentSelectProject']);
+            # Competencies Routes
+            Route::get('/competencies', [CompetencyController::class, 'index']);
+
+            # Subjects Routes
+            Route::get('/subjects', [SubjectController::class, 'index']);
         });
     });
     #These are Auth routes for Teachers & students

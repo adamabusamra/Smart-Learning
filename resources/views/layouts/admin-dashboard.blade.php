@@ -35,9 +35,9 @@
     class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <!--begin::Main-->
     <!--begin::Header Mobile-->
-    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed max-w-92">
       <!--begin::Logo-->
-      <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" />
+      <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" style="max-width: 92px;" />
       <!--end::Logo-->
       <!--begin::Toolbar-->
       <div class="d-flex align-items-center">
@@ -46,11 +46,11 @@
           <span></span>
         </button>
         <!--end::Aside Mobile Toggle-->
-        <!--begin::Header Menu Mobile Toggle-->
+        {{-- <!--begin::Header Menu Mobile Toggle-->
         <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
           <span></span>
         </button>
-        <!--end::Header Menu Mobile Toggle-->
+        <!--end::Header Menu Mobile Toggle--> --}}
         <!--begin::Topbar Mobile Toggle-->
         <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
           <span class="svg-icon svg-icon-xl">

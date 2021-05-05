@@ -8,22 +8,6 @@ About
 
 <!-- Main content Start -->
 <div class="main-content">
-    <!-- Breadcrumbs Start -->
-    <div class="rs-breadcrumbs breadcrumbs-overlay">
-        <div class="breadcrumbs-img">
-            <img src="assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image" />
-        </div>
-        <div class="breadcrumbs-text white-color">
-            <h1 class="page-title">About Us</h1>
-            <ul>
-                <li>
-                    <a class="active" href="index-2.html">Home</a>
-                </li>
-                <li>About Us</li>
-            </ul>
-        </div>
-    </div>
-    <!-- Breadcrumbs End -->
 
     <!-- About Section Start -->
     <div id="rs-about" class="rs-about style1 pt-50 pb-30 md-pt-30 md-pb-30">
@@ -36,21 +20,16 @@ About
                 </div>
                 <div class="col-lg-6 pr-70 md-pr-15">
                     <div class="sec-title">
-                        <div class="sub-title orange">About Educavo</div>
+                        <div class="sub-title orange">About Us</div>
                         <h2 class="title mb-17">
-                            Welcome to The Educavo Online Learning
+                            Welcome to Smart Learning
                         </h2>
                         <div class="bold-text mb-22">
-                            Recogizing the need is the primary than we expected Lorem
-                            ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa
-                            voluptatibus,
+                            We seek to raise the quality and standard of online education
                         </div>
                         <div class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed
-                            eius to mod tempors incididunt ut labore et dolore magna this
-                            aliqua enims ad minim. Lorem ipsum dolor sit amet, consectetur
-                            adipisic ing elit, sed eius to mod tempor. Lorem ipsum dolor
-                            sit amet
+                            Education gives us knowledge of the world around us. It develops in us a perspective
+                            of looking at life. It is the most important element in the evolution of the nation.
                         </div>
                     </div>
                 </div>
@@ -63,21 +42,19 @@ About
                 </div>
                 <div class="col-lg-6 pr-70 md-pr-15">
                     <div class="sec-title">
-                        <div class="sub-title orange">About Educavo</div>
+                        <div class="sub-title orange">Our Platform</div>
                         <h2 class="title mb-17">
-                            Welcome to The Educavo Online Learning
+                            The all-in-one Learning Management System
                         </h2>
                         <div class="bold-text mb-22">
-                            Recogizing the need is the primary than we expected Lorem
-                            ipsum dolor sit amet, consectetur adipisicing elit. Sint ipsa
-                            voluptatibus,
+                            Smart learning is a learning management system (LMS) software application for the
+                            administration, documentation, tracking,reporting, automation and delivery of educational
+                            courses,
                         </div>
                         <div class="desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed
-                            eius to mod tempors incididunt ut labore et dolore magna this
-                            aliqua enims ad minim. Lorem ipsum dolor sit amet, consectetur
-                            adipisic ing elit, sed eius to mod tempor. Lorem ipsum dolor
-                            sit amet
+                            Our systems are designed to identify trainingand learning gaps. The software is focusedon
+                            online learning delivery but support arange of uses, acting as a platform for onlinecontent,
+                            including courses.
                         </div>
                     </div>
                 </div>
@@ -86,7 +63,7 @@ About
     </div>
     <!-- About Section End -->
 
-    <!-- Team Section -->
+    {{-- <!-- Team Section -->
 
     <section class="profile-section orange-color pt-30 pb-100 md-pt-30 md-pb-70 loaded">
         <div class="container">
@@ -179,7 +156,7 @@ About
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
+    <!-- Team Section End --> --}}
 
 
 
@@ -190,24 +167,24 @@ About
                 <div class="row y-bottom">
                     <div class="col-lg-6 pb-50 md-pt-70 md-pb-70">
                         <div class="video-wrap">
-                            <a class="popup-videos" href="https://www.youtube.com/watch?v=atMUy_bPoQI">
+                            <a class="popup-videos" href="https://www.youtube.com/watch?v=RAnE9Z13-dY">
                                 <i class="fa fa-play"></i>
-                                <h4 class="title mb-0">Take a Video Tour at Educavo</h4>
+                                <h4 class="title mb-0">Introduction Video About Smart Learning</h4>
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6 pl-62 pt-134 pb-150 md-pt-50 md-pb-50 md-pl-15">
                         <div class="sec-title mb-40 md-mb-20">
-                            <h2 class="title mb-16">Admission Open for 2020</h2>
+                            <h2 class="title mb-16">Admission Open for 2021</h2>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed eius to mod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enims ad minim veniam. Aenean massa. Cum sociis
-                                natoque penatibus et magnis.
+                                We live in a world that is rapidly changing and developing, and we are constantly
+                                seeking
+                                to digitalize our daily activities,
+                                and one of the essential aspects of our dailylife is education.
                             </div>
                         </div>
                         <div class="btn-part">
-                            <a class="readon2 orange" href="#">Apply Now</a>
+                            <a class="readon2 orange" href="/contact">Contact us to join</a>
                         </div>
                     </div>
                 </div>
@@ -215,122 +192,6 @@ About
         </div>
     </div>
     <!-- CTA Section End -->
-
-    <!-- Testimonial Section Start -->
-    <div class="rs-testimonial main-home pt-100 pb-100 md-pt-70 md-pb-70">
-        <div class="container">
-            <div class="sec-title3 mb-50 md-mb-30 text-center">
-                <div class="sub-title primary">Testimonial</div>
-                <h2 class="title white-color">What Students Saying</h2>
-            </div>
-            <div class="rs-carousel owl-carousel" data-loop="true" data-items="2" data-margin="30" data-autoplay="true"
-                data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="true"
-                data-nav="false" data-nav-speed="false" data-md-device="2" data-md-device-nav="false"
-                data-md-device-dots="true" data-center-mode="false" data-ipad-device2="1" data-ipad-device-nav2="false"
-                data-ipad-device-dots2="true" data-ipad-device="2" data-ipad-device-nav="false"
-                data-ipad-device-dots="true" data-mobile-device="1" data-mobile-device-nav="false"
-                data-mobile-device-dots="false">
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Mahadi Monsura</a>
-                        <span class="designation">Student</span>
-                    </div>
-                </div>
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Alex Fenando</a>
-                        <span class="designation">English Teacher</span>
-                    </div>
-                </div>
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Losis Dcosta</a>
-                        <span class="designation">Math Teacher</span>
-                    </div>
-                </div>
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Mahadi Monsura</a>
-                        <span class="designation">Student</span>
-                    </div>
-                </div>
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Alex Fenando</a>
-                        <span class="designation">English Teacher</span>
-                    </div>
-                </div>
-                <div class="testi-item">
-                    <div class="author-desc">
-                        <div class="desc"><img class="quote" src="assets/images/testimonial/main-home/test-2.png"
-                                alt="">Professional, responsive, and able to keep up with ever-changing demand and tight
-                            deadlines: That’s how I would describe Jeramy and his team at The Lorem Ipsum Company. When
-                            it comes to content marketing, you’ll definitely get the 5-star treatment from the Lorem
-                            Ipsum Company.</div>
-                        <div class="author-img">
-                            <img src="assets/images/testimonial/style5/3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="author-part">
-                        <a class="name" href="#">Losis Dcosta</a>
-                        <span class="designation">Math Teacher</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial Section End -->
-
     <!-- Services Section Start -->
     <div class="rs-services style6 pt-100 pb-100 md-pb-70">
         <div class="container">
@@ -338,9 +199,9 @@ About
                 <h2 class="title title-color mb-21">Study methedology</h2>
                 <div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at dictum risus, non suscip it<br>
-                        arcu. Quisque aliquam posuere tortor, sit amet convallis nunc sce leris is que in. Lorem<br>
-                        ipsum dolor sit amet consectetur
+                        methodology is the specific procedures or techniques used to identify, select, process, and
+                        analyze information about a topic.<br> In a research paper, the methodology section allows the
+                        reader to critically evaluate<br> a study's overall validity and reliability.
                     </p>
                 </div>
             </div>
@@ -352,10 +213,10 @@ About
                                 <img src="assets/images/services/home6/icon/1.png" alt="images">
                             </div>
                             <div class="services-desc">
-                                <h3 class="title"><a href="#">Active Learning</a></h3>
+                                <h3 class="title"><a href="">Active Learning</a></h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, of
-                                    consectetur adipiscing elit. is dictum risus non suscip
+                                    Active learning is any approach to instruction in which all students are asked to
+                                    engage in the learning process.
                                 </p>
                             </div>
                         </div>
@@ -368,10 +229,10 @@ About
                                 <img src="assets/images/services/home6/icon/2.png" alt="images">
                             </div>
                             <div class="services-desc">
-                                <h3 class="title"><a href="#">Project based</a></h3>
+                                <h3 class="title"><a href="">Project based</a></h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, of
-                                    consectetur adipiscing elit. is dictum risus non suscip
+                                    Project Based Learning is a teaching method in which students gain knowledge and
+                                    skills by working for an extended period of time
                                 </p>
                             </div>
                         </div>
@@ -384,10 +245,10 @@ About
                                 <img src="assets/images/services/home6/icon/3.png" alt="images">
                             </div>
                             <div class="services-desc">
-                                <h3 class="title"><a href="#">Agile methodology</a></h3>
+                                <h3 class="title"><a href="">Agile methodology</a></h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, of
-                                    consectetur adipiscing elit. is dictum risus non suscip
+                                    Agile project management is an iterative approach to delivering a project throughout
+                                    its life cycle
                                 </p>
                             </div>
                         </div>
@@ -402,8 +263,8 @@ About
                             <div class="services-desc">
                                 <h3 class="title"><a href="#">Team work !</a></h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, of
-                                    consectetur adipiscing elit. is dictum risus non suscip
+                                    Teamwork is the collaborative effort of a group to achieve a common goal or to
+                                    complete a task in the most effective and efficient way.
                                 </p>
                             </div>
                         </div>

@@ -19,9 +19,9 @@ Home
                     <div class="sl-sub-title wow bounceInLeft" data-wow-delay="300ms" data-wow-duration="2000ms">Start
                         to learning today</div>
                     <h1 class="sl-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">Online
-                        Courses From Leading Experts</h1>
+                        Tutition From Leading Experts</h1>
                     <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
-                        <a class="readon orange-btn main-home" href="#">Find Courses</a>
+                        <a class="readon orange-btn main-home" href="#study-fields">Study Fields</a>
                     </div>
                 </div>
             </div>
@@ -32,9 +32,9 @@ Home
                     <div class="sl-sub-title wow bounceInLeft" data-wow-delay="300ms" data-wow-duration="2000ms">Start
                         to learning today</div>
                     <h1 class="sl-title wow fadeInRight" data-wow-delay="600ms" data-wow-duration="2000ms">Explore
-                        Interests and Career With Courses</h1>
+                        Interests and Career With Lots of Study Fields</h1>
                     <div class="sl-btn wow fadeInUp" data-wow-delay="900ms" data-wow-duration="2000ms">
-                        <a class="readon orange-btn main-home" href="#">Find Courses</a>
+                        <a class="readon orange-btn main-home" href="#study-fields">Study Fields</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ Home
                         </div>
                         <div class="content-part">
                             <h4 class="title">
-                                <span class="watermark">5,320 online courses</span>
+                                <span class="watermark">A variety of fields</span>
                             </h4>
                             <p class="dese">
                                 Enjoy a variety of fresh topics
@@ -112,12 +112,16 @@ Home
             <div class="col-lg-5">
                 <div class="sec-title mb-26 wow" data-wow-delay="300ms" data-wow-duration="2000ms">
                     <div class="sub-title orange">About Us</div>
-                    <h2 class="title">Welcome to Educavo <br>Distance Learning</h2>
-                    <div class="desc pr-30">Lorem ipsum dolor sit amet, consectetur adipisic ing elit, sed eius to mod
-                        tempors incididunt ut labore et dolore magna this aliqua enims ad minim.</div>
+                    <h2 class="title">Welcome to <span style="color: #ff5421">Smart Learning </span> <br> For Distance
+                        Learning
+                    </h2>
+                    <div class="desc pr-30">Our systems are designed to identify trainingand learning gaps. The software
+                        is focused on online learning delivery but support arange of uses, acting as a platform for
+                        online content, including courses. We also offer classroom management
+                        for instructor-led training.</div>
                 </div>
                 <div class="btn-part wow" data-wow-delay="300ms" data-wow-duration="2000ms">
-                    <a class="readon orange-btn main-home" href="#">Read More</a>
+                    <a class="readon orange-btn main-home" href="/about">Read More</a>
                 </div>
             </div>
         </div>
@@ -132,19 +136,19 @@ Home
         <div class="row couter-area">
             <div class="col-lg-3 col-md-6 md-mb-30">
                 <div class="counter-item text-center">
-                    <h2 class="rs-count">2.958</h2>
-                    <h4 class="title mb-0">Finished Sessions</h4>
+                    <h2 class="rs-count">{{count($projects)}}</h2>
+                    <h4 class="title mb-0">Projects</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 md-mb-30">
                 <div class="counter-item text-center">
-                    <h2 class="rs-count plus">4.523</h2>
-                    <h4 class="title mb-0">Enrolled Learners</h4>
+                    <h2 class="rs-count plus">{{count($students)}}</h2>
+                    <h4 class="title mb-0">Learners</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 sm-mb-30">
                 <div class="counter-item text-center">
-                    <h2 class="rs-count plus">120</h2>
+                    <h2 class="rs-count plus">{{count($teachers)}}</h2>
                     <h4 class="title mb-0">Online Instructors</h4>
                 </div>
             </div>
@@ -162,34 +166,38 @@ Home
 
 <!-- Categories Section Start -->
 <div id="rs-categories" class="rs-categories main-home pt-60 pb-100 md-pt-40 md-pb-40">
-    <div class="container">
+    <div class="container" id="study-fields">
         <div class="sec-title3 text-center mb-45">
-            <div class="sub-title"> Top Categories</div>
-            <h2 class="title black-color">Popular Online Categories</h2>
+            <div class="sub-title"> Top Study Fields</div>
+            <h2 class="title black-color">Our Online Study Fields</h2>
         </div>
         <div class="row mb-35">
+            @foreach ($fields as $field)
             <!-- Course item-->
             <div class="col-lg-4 col-md-6">
                 <div class="categories-items">
                     <div class="cate-images">
-                        <a href="#"><img src="assets/images/categories/main-home/1.jpg" alt=""></a>
+                        <a href=""><img src="{{asset('field/images/'.$field->image)}}" alt=" study field image"
+                                style="width:393.3px;height:393.3"></a>
                     </div>
                     <div class="contents">
                         <div class="img-part">
                             <img src="assets/images/categories/main-home/icon/1.png" alt="">
                         </div>
                         <div class="content-wrap">
-                            <h2 class="title"><a href="#">General Education</a></h2>
-                            <span class="course-qnty">02 Courses</span>
+                            <h2 class="title"><a href="">{{$field->name}}</a></h2>
+                            {{-- <span class="course-qnty">02 Courses</span> --}}
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Course item End-->
+            @endforeach
+
         </div>
-        <div class="col-lg-12 text-center">
+        {{-- <div class="col-lg-12 text-center">
             <a class="readon orange-btn main-home" href="#">View All categories </a>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- Categories Section End -->
@@ -204,13 +212,12 @@ Home
                 <div class="col-lg-6 pl-70 md-pl-15">
                     <div class="sec-title3 mb-40">
                         <h2 class="title white-color mb-16">20% Offer Running - Join Today</h2>
-                        <div class="desc white-color pr-100 md-pr-0">We denounce with righteous indignation and dislike
-                            men who are so beguiled and demoralized by the charms of pleasure of your moment, so blinded
-                            by desire those who fail in their duty through weakness. These cases are perfectly simple
-                            and easy every pleasure is to be welcomed and every pain avoided.</div>
+                        <div class="desc white-color pr-100 md-pr-0">Education gives us knowledge of the worldaround us.
+                            It develops in us a perspective oflooking at life. It is the most importantelement in the
+                            evolution of the nation.</div>
                     </div>
                     <div class="btn-part">
-                        <a class="readon orange-btn transparent" href="#">Register Now</a>
+                        <a class="readon orange-btn transparent" href="/contact">Enroll Today</a>
                     </div>
                 </div>
             </div>
@@ -235,33 +242,35 @@ Home
             data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false"
             data-md-device-dots="false">
 
+            @foreach ($news as $post)
             <!-- Blog Item -->
             <div class="blog-item">
                 <div class="image-part">
-                    <img src="assets/images/blog/style2/1.jpg" alt="">
+                    <img src="{{asset('news/images/'.$post->image)}}" alt="">
                 </div>
                 <div class="blog-content">
                     <ul class="blog-meta">
                         <li><i class="fa fa-user-o"></i> Admin</li>
-                        <li><i class="fa fa-calendar"></i>December 15, 2020</li>
+                        <li><i class="fa fa-calendar"></i>{{$post->created_at}}</li>
                     </ul>
-                    <h3 class="title"><a href="blog-single.html">Education is The Process of Facilitating Learning</a>
+                    <h3 class="title"><a href="/posts/{{$post->id}}">{{$post->headline}}</a>
                     </h3>
-                    <div class="desc">the acquisition of knowledge, skills, values befs, and habits. Educational methods
-                        include teach ing, training, storytelling</div>
+                    <div class="desc">{{$post->short_description}}</div>
                     <div class="btn-btm">
                         <div class="cat-list">
                             <ul class="post-categories">
-                                <li><a href="#">College</a></li>
+                                <li><a href="#">{{$post->tag}}</a></li>
                             </ul>
                         </div>
                         <div class="rs-view-btn">
-                            <a href="#">Read More</a>
+                            <a href="/posts/{{$post->id}}">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Blog Item End -->
+
+            @endforeach
 
         </div>
     </div>
