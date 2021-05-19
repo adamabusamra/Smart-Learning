@@ -65,6 +65,9 @@ class NewsController extends Controller
             'headline'              => $request->headline,
             'image'                 => $file_name,
         ]);
+
+        return redirect()->route('posts.index')
+            ->with('toast_success', 'Post created successfully.');
     }
 
     /**

@@ -120,18 +120,18 @@
                                         </div>
                                         <nav class="rs-menu">
                                             <ul class="nav-menu">
-                                                <li class="menu-item-has-children current-menu-item">
+                                                <li id="home-tab" class="menu-item-has-children current-menu-item">
                                                     <a href="/">Home</a>
                                                 </li>
 
-                                                <li class="menu-item-has-children ">
+                                                <li id="about-tab" class="menu-item-has-children ">
                                                     <a href="/about">About</a>
                                                 </li>
-                                                <li class="menu-item-has-children ">
+                                                <li id="blog-tab" class="menu-item-has-children ">
                                                     <a href="/blog">Blog</a>
                                                 </li>
 
-                                                <li class="menu-item-has-children">
+                                                <li id="contact-tab" class="menu-item-has-children">
                                                     <a href="/contact">Contact</a>
                                                 </li>
                                             </ul> <!-- //.nav-menu -->
@@ -234,7 +234,8 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-12 col-sm-12 footer-widget">
                             <div class="footer-logo mb-30">
-                                <a href="index-2.html"><img src="assets/images/lite-logo.png" alt="" /></a>
+                                <a href="index-2.html"><img src="{{asset('assets/media/logos/logo-light.png')}}"
+                                        alt="" /></a>
                             </div>
                             <div class="textwidget white-color pr-60 md-pr-15">
                                 <p class="text-white">
@@ -392,6 +393,29 @@
         <script src="{{ asset('assets/js/contact.form.js')}}"></script>
         <!-- main js -->
         <script src="{{ asset('assets/js/main.js')}}"></script>
+        <script>
+            //     $(".menu-item-has-children").click(function() {
+        //         $(".menu-item-has-children").removeClass("current-menu-item")
+        //         $(this).addClass("current-menu-item")
+        // })
+        $(document).ready(function () {
+    if(window.location.href.indexOf("home") > -1) {
+        $(".menu-item-has-children").removeClass("current-menu-item")
+        $('#home-tab').addClass("current-menu-item");
+    } else if(window.location.href.indexOf("about") > -1) {
+        $(".menu-item-has-children").removeClass("current-menu-item")
+        $('#about-tab').addClass("current-menu-item");
+    }
+    else if(window.location.href.indexOf("blog") > -1) {
+        $(".menu-item-has-children").removeClass("current-menu-item")
+        $('#home-tab').addClass("current-menu-item");
+    }
+     else if(window.location.href.indexOf("contact") > -1) {
+        $(".menu-item-has-children").removeClass("current-menu-item")     
+        $('#contact-tab').addClass("current-menu-item");
+        }
+});
+        </script>
     </body>
 
 </html>

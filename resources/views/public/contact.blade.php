@@ -29,7 +29,7 @@ contact
                         </div>
                         <div class="content-part">
                             <h5 class="info-subtitle">Email Address</h5>
-                            <h4 class="info-title"><a href="mailto: info@smartlearning.com"> info@smartlearning.com</a>
+                            <h4 class="info-title"><a href="mailto: info@smartlearning.com"> info@elearning.com</a>
                             </h4>
                         </div>
                     </div>

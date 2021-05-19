@@ -37,7 +37,9 @@ About
             <div class="row align-items-center">
                 <div class="col-lg-6 order-last padding-0 md-pl-15 md-pr-15 md-mb-30">
                     <div class="img-part">
-                        <img class="" src="assets/images/about/about2orange.png" alt="About Image" />
+                        <img class=""
+                            src="https://keenitsolutions.com/products/wordpress/educavo/wp-content/uploads/2021/04/about.png"
+                            alt="About Image" />
                     </div>
                 </div>
                 <div class="col-lg-6 pr-70 md-pr-15">

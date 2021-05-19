@@ -119,7 +119,7 @@
               <!--begin::Menu Nav-->
               <ul class="menu-nav">
                 <li class="menu-item" aria-haspopup="true">
-                  <a href="{{route('teachers.index')}}" class="menu-link">
+                  <a href="{{route('admin.index')}}" class="menu-link">
                     <i class="menu-icon flaticon-home"></i>
                     <span class="menu-text">Dashboard</span>
                   </a>
@@ -267,6 +267,38 @@
                             <span></span>
                           </i>
                           <span class="menu-text">Specialities Table</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="menu-section">
+                  <h4 class="menu-text">Education</h4>
+                  <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                </li>
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                  <a href="javascript:;" class="menu-link menu-toggle">
+                    <i class="menu-icon flaticon2-layers"></i>
+                    <span class="menu-text">News</span>
+                    <i class="menu-arrow"></i>
+                  </a>
+                  <div class="menu-submenu">
+                    <i class="menu-arrow"></i>
+                    <ul class="menu-subnav">
+                      <li class="menu-item" aria-haspopup="true">
+                        <a href="{{ route('posts.create') }}" class="menu-link">
+                          <i class="menu-bullet menu-bullet-dot">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">Create Post</span>
+                        </a>
+                      </li>
+                      <li class="menu-item" aria-haspopup="true">
+                        <a href="{{ route('posts.index') }}" class="menu-link">
+                          <i class="menu-bullet menu-bullet-dot">
+                            <span></span>
+                          </i>
+                          <span class="menu-text">All Posts</span>
                         </a>
                       </li>
                     </ul>

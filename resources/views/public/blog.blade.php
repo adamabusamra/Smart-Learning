@@ -12,9 +12,10 @@ Home
     <div class="row">
       <div class="col-lg-4 col-md-12 pr-50 md-pr-15">
         <div class="widget-area">
-          @foreach($news as $post)
+
           <div class="recent-posts-widget mb-50">
             <h3 class="widget-title">Recent Posts</h3>
+            @foreach($news as $post)
             <div class="show-featured ">
               <div class="post-img">
                 <a href="/posts/{{$post->id}}"><img src="{{asset('news/images/'.$post->image)}}" alt=""></a>
@@ -27,8 +28,9 @@ Home
                 </span>
               </div>
             </div>
+            @endforeach
           </div>
-          @endforeach
+
 
         </div>
       </div>

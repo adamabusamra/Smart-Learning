@@ -69,6 +69,12 @@ Route::prefix('dashboard')->group(function () {
     # Admin Dashboard Routes
     Route::prefix('admin')->group(function () {
         Route::middleware('auth')->group(function () {
+            Route::get('/', function () {
+                return view('dashboard.admin.index');
+            })->name('admin.index');
+            Route::get('/calendar', function () {
+                return view('dashboard.admin.calendar');
+            });
             # Admins Routes
             Route::resource('admins', AdminController::class);
 
